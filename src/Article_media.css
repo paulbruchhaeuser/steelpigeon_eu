@@ -1,0 +1,11 @@
+.media_video {
+  padding: 10px 0px 10px 0px;
+  overflow: hidden;
+}
+
+.media_video video {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

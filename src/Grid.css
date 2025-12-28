@@ -1,0 +1,335 @@
+
+
+
+/* .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+  grid-auto-rows: 300px;
+} */
+
+.grid-container {
+
+    width: 100%;
+
+    /* overflow: hidden; */
+    max-width: 1440px; 
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+
+    grid-auto-flow: dense;
+    /* gap: 16px; */
+    height: max-content;
+}
+
+/* @media (min-width 1280px) {
+  .grid-container  {
+    grid-auto-rows: 1fr;
+  }
+} */
+
+.grid-item 
+{
+  color: white;
+  /* padding: 8px; */
+  font-size: 30px;
+  text-align: center;
+
+  outline-style: solid;
+  outline-color: #FC2600;
+  outline-width: 0px;
+}
+
+.grid-item:hover
+{
+  cursor: pointer;
+}
+
+.grid-item--disabled {
+  /* opacity: 0.5; */
+  cursor: default;
+}
+
+.grid-item--disabled:hover {
+  cursor: default;
+}
+
+
+
+a {
+  /* color: blue; */
+  text-decoration: none; /* no underline */
+}
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* 16 to 9 aspect ratio box styles */
+.grid-item.aspect_16_9 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.grid-item.aspect_16_9 .inside_box {
+  aspect-ratio: 2.0;
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.grid-item.aspect_16_9 .inside_box .image_container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(155, 134, 78);
+  grid-column: 1 / 7;
+  grid-row: 1 / 4;
+  z-index: -1;
+}
+
+.grid-item.aspect_16_9 .inside_box .image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.grid-item.aspect_16_9 .inside_box .title_container {
+  grid-column: 3 / 7;
+  grid-row: 1 / 2;
+}
+
+.grid-item.aspect_16_9 .inside_box .text_container {
+  grid-column: 1 / 5;
+  grid-row: 3 / 5;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+/* 9 to 16 aspect ratio box styles */
+.grid-item.aspect_9_16 
+{
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.grid-item.aspect_9_16 .inside_box {
+  aspect-ratio: 0.4855;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  padding: 8px
+}
+
+.grid-item.aspect_9_16 .inside_box .image_container {
+  width: 100%;
+  height: 100%;
+  /* background-color: rgb(53, 67, 105); */
+  grid-column: 1 / 4;
+  grid-row: 1 / 7;
+}
+
+.grid-item.aspect_9_16 .inside_box .image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-item.aspect_9_16 .inside_box .title_container {
+
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  
+}
+
+.grid-item.aspect_9_16 .inside_box .text_container {
+  grid-column: 1 / 5;
+  grid-row: 3 / 7;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+/* 1 to 1 aspect ratio box styles */
+.grid-item.aspect_1_1 {
+  grid-column: span 1;
+  grid-row: span 1;
+  
+}
+
+.grid-item.aspect_1_1 .inside_box {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* place-items: center; */
+  
+  padding: 8px
+}
+
+.grid-item.aspect_1_1 .inside_box .image_container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(216, 216, 216);
+  grid-column: 1 / 4;
+  grid-row: 1 / 4;
+}
+
+.grid-item.aspect_1_1 .inside_box .image_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.grid-item.aspect_1_1 .inside_box .title_container {
+
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  
+}
+
+.grid-item.aspect_1_1 .inside_box .text_container {
+  grid-column: 1 / 5;
+  grid-row: 3 / 4;
+}
+
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* general styles for inside box elements */ 
+
+.inside_box .title_container {
+
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(255, 255, 255, 0.774); */
+  text-align: right;
+  z-index: 4;
+}
+
+.inside_box .text_container {
+
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(255, 255, 255, 0.774); */
+  /* text-align: right; */
+  z-index: 4;
+}
+
+.inside_box .title_container .text {
+  font-family: roboto_variable, sans-serif; 
+  
+  color: #E54C00;
+  /* background-color: rgba(129, 211, 135, 0.774); */
+  line-height: 50px;
+  /* margin-left: -2px; */
+  font-size: 58px;
+  font-weight: 800;
+text-transform: uppercase;
+  padding: 6px 8px 4px 8px;
+
+}
+
+.inside_box .text_container {
+  
+}
+
+.inside_box .text_container .text {
+  font-family: slabo, serif;
+  height: 100%;
+  font-size: 30px;
+  line-height: 30px;
+  color: #E54C00;
+  text-align: left;
+  display: flex;
+}
+
+.inside_box .text_container .text span{
+  align-self: flex-end;
+  padding: 6px 8px 4px 8px;
+}
+
+
+
+
+
+
+
+
+
+.text_block_container  {
+  font-family: slabo, serif;
+  
+  /* width: 100%; */
+  /* height: 100%; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  padding: 0px;
+  box-sizing: border-box;
+  /* color:#FC2600; */
+  color: #E54C00;
+  text-align: right;
+
+  /* position: relative;
+  top: -100%;
+  left: 0; */
+  /* grid-area: 1 / 1 / 2 / 2; */
+}
+
+
+.box1 {
+    grid-area: box1;
+}
+
+.box2 {
+    grid-area: box2;
+}   
+
+.box3 {
+    grid-area: box3;
+}
+
+.box4 {
+    grid-area: box4;
+}
+.box5 {
+    grid-area: box5;
+}
+
+
+@media (max-width: 56em) {
+    .grid-container {
+        grid-template-areas: 
+        "box1"
+        "box1"
+        "box3"
+        "box4"
+        "box5";
+    }
+}
+
+@media (max-width: 42em) {
+    .grid-container {
+        grid-template-areas:
+            "box1"
+            "box2"
+            "box3"
+            "box4"
+            "box5";
+    }
+}
+
+/* Hide grid items when article is open */
+.grid-container.article-open .grid-item {
+  display: none;
+}

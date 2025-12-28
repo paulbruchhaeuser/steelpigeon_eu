@@ -1,0 +1,122 @@
+.header {
+  /* background-color: #333; */
+  padding: 0;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 15px 20px; */
+  width: 100%;
+  max-width: 1440px;
+  /* background-color: #E54C00; */
+}
+
+.logo {
+  font-family: roboto_variable, sans-serif;
+  font-size: 64px;
+  font-weight: 100;
+
+  color: #181818;
+  margin: 2px 0px -8px 8px;
+  flex: 1;
+  text-align: left;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 10px 0px 0px;
+
+}
+
+.burger-line {
+  width: 30px;
+  height: 2px;
+  background-color: #0e0e0e;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.burger-line.active:nth-child(1) {
+  transform: translate(0px, -5px);
+}
+
+.burger-line.active:nth-child(2) {
+  /* opacity: 0.5; */
+  background-color: #FC2600;
+}
+
+.burger-line.active:nth-child(3) {
+  transform: translate(0px,5px);
+}
+
+.mobile-menu {
+  display: flex;
+  /* flex-direction: column; */
+  background-color: #e5e5e5cf;
+  padding: 0px 0;
+  margin-top: 8px;
+  animation: slide 0.5s forwards;
+  /* position: fixed;
+  top: 10px;
+  right: 411px; */
+  z-index: 999;
+  width: auto;
+  max-width: 1440px;
+
+}
+
+.mobile-menu a {
+  /* color: #fff; */
+  color:black;
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+
+  font-family: roboto_variable, sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+}
+
+.mobile-menu a:hover {
+    
+    color: #FC2600;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 1441px) {
+  .header {
+    /* width: 1440px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mobile-menu {
+    /* width: 1440px; */
+    /* left: 100%; */
+    /* right: 100%; */
+    /* transform: translateX(-50%); */
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+  <title>CENTURION RESURRECTION #01</title>
+  <subtitle>Deluxe resurrection of one forgotten treasure</subtitle>
+  
+  <media src="videos/sp_resurr_01.mp4" type="video/mp4" poster="images/sp_build_01/sp001_big_01.jpg" />
+
+
+
+  <paragraph>
+    Once forgotten and headed for the bins, this 90s mountain bike has been given a second 
+    life—rescued from obscurity and rebuilt with intention, patience, and a lot of love.
+
+    The frame carries the unmistakable spirit of the era: honest steel tubes, purposeful 
+    geometry, and a time when mountain bikes were built to survive anything. Scratches and 
+    scars remain as quiet reminders of past rides, but beneath them is a structure that 
+    deserved far more than abandonment. What was once considered outdated has proven timeless.
+  </paragraph>
+  
+  <gallery>
+    <image src="images/sp_resurr_01/sp_resurr_01_gallery_01.jpg" alt="Frame angle view 1" />
+    <image src="images/sp_resurr_01/sp_resurr_01_gallery_02.jpg" alt="Frame angle view 2" />
+    <image src="images/sp_resurr_01/sp_resurr_01_gallery_03.jpg" alt="Frame angle view 3" />
+  </gallery>
+
+ 
+</article>
