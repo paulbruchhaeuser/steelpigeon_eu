@@ -1,11 +1,21 @@
 import "./Header.css";
 import { useState } from "react";
 
-function Header({ onImprintClick, onContactClick }) {
+function Header({
+  onImprintClick,
+  onContactClick,
+  onCloseImprint,
+  onCloseContact,
+}) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    if (!menuOpen) {
+      // Close Imprint and Contact when opening menu
+      onCloseImprint();
+      onCloseContact();
+    }
   };
 
   const handleImprintClick = () => {

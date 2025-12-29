@@ -40,7 +40,12 @@ function App() {
   return (
     <div className="App">
       <div className="main_content">
-        <Header onImprintClick={openImprint} onContactClick={openContact} />
+        <Header
+          onImprintClick={openImprint}
+          onContactClick={openContact}
+          onCloseImprint={closeImprint}
+          onCloseContact={closeContact}
+        />
 
         {showImprint ? (
           <Imprint onClose={closeImprint} />
