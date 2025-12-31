@@ -2,12 +2,16 @@ const express = require("express");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, "build")));
 
 // Create a transporter for Gmail
 // You'll need to use an App Password (not your regular Gmail password)
@@ -63,6 +67,11 @@ app.post("/api/contact", async (req, res) => {
     console.error("Error sending email:", error);
     res.status(500).json({ error: "Failed to send email" });
   }
+});
+
+// Serve React app for all other routes (SPA fallback)
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
