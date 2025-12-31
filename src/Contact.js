@@ -17,15 +17,32 @@ export default function Contact({ onClose }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to a backend
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", message: "" });
-      setSubmitted(false);
-    }, 2000);
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        console.log("Form submitted successfully");
+        setSubmitted(true);
+        setTimeout(() => {
+          setFormData({ name: "", email: "", message: "" });
+          setSubmitted(false);
+        }, 2000);
+      } else {
+        console.error("Failed to submit form");
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending form:", error);
+      alert("Error sending message. Make sure the server is running.");
+    }
   };
 
   return (
