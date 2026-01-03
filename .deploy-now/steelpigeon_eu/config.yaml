@@ -1,0 +1,5 @@
+# IONOS Deploy Now Configuration
+# This file is required for the IONOS Deploy Now GitHub Actions workflow
+
+distFolder: build
+excludes: []
